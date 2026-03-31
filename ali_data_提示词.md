@@ -1,0 +1,3 @@
+我在进行一个k8s volcano仿真的项目，需要根据目录中的pai_machine_spec.csv数据构造k8s集群节点，pai_machine_spec.header是其表头，根据cluster_config_example/cluster.yaml是k8s集群节点的配置文件示例，根据示例模版来构造一个cluster，其中gpu_type=cpu的数据不用，cap_cpu/1000为allocatable.cpu和capacity.cpu的值，cap_mem为allocatable.memory和capacity.memory的值，cap_gpu的值对应npu卡数，npu卡数对应volcano.sh/flexnpu-core.percentage-list的元素数，每个元素值为100，也对应volcano.sh/flexnpu-memory.128mi-list的元素数，每个元素值为100，volcano.sh/flexnpu-core.percentage的值对应上面volcano.sh/flexnpu-core.percentage-list所有元素的和，volcano.sh/flexnpu-memory.128mi对应 volcano.sh/flexnpu-memory.128mi-list所有元素的和，topologies有HCCS组和SIO组，HCCS组根据cap_gpu的值，如果cap_gpu=2则hccs组为0和1一组，如果cap_gpu=8则hccs组为0-3一组，4-7一组或者0-1一组2-3一组4-5一组6-7一组，两种选其一。SIO分组规则是每个npu卡一个组。node的命名规格是node-{index}，你自己写python脚本命名为generate_node_config.py
+
+

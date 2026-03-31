@@ -1,0 +1,209 @@
+# yaml-language-server: $schema=../../schemas/workload/workload-input.schema.json
+apiVersion: v1
+kind: JobList
+spec:
+  npuGranularityPercent: 1
+jobs:
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-0
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 100
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 100
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-1
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 100
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 100
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 100
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 100
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-3
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 50
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 50
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-4
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 50
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 50
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-5
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 200
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 200
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: workload1-job-6
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "task-container": 1 }'
+    spec:
+      minAvailable: 600
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 600
+          spec:
+            containers:
+              - name: task-container
+                resources:
+                  requests:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"
+                  limits:
+                    cpu: '0.3'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "30"

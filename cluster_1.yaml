@@ -1,0 +1,352 @@
+# yaml-language-server: $schema=../../schemas/cluster/cluster-input.schema.json
+apiVersion: v1
+kind: NodeList
+spec:
+  kubernetesVersion: "1.31"
+  volcanoVersion: "1.12"
+nodes:
+  - name: node-0
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-1
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-2
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-3
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-4
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-5
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-6
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-7
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-8
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-9
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-10
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-11
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-12
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-13
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+  - name: node-14
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1", "2,3", "4,5"]}, {"type": "SIO", "groups": ["0", "1", "2", "3", "4", "5"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "600"
+        volcano.sh/flexnpu-memory.128mi: "3072"
+        pods: 110

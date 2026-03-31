@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../../schemas/cluster/cluster-input.schema.json
+apiVersion: v1
+kind: NodeList
+spec:
+  kubernetesVersion: "1.31"
+  volcanoVersion: "1.12"
+nodes:
+  - name: node-0
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":100,"1":100}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1"]}],{"type": "SIO", "groups": ["0","1"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "200"
+        volcano.sh/flexnpu-memory.128mi: "200"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "200"
+        volcano.sh/flexnpu-memory.128mi: "200"
+        pods: 110
+  - name: node-1
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: simulated
+      linc/nodeType: cloud
+    annotations:
+      volcano.sh/flexnpu-mode: baremetal
+      volcano.sh/flexnpu-core.percentage-list: '{"0":100,"1":100,"2":100,"3":100,"4":100,"5":100,"6":100,"7":100}'
+      volcano.sh/flexnpu-memory.128mi-list: '{"0":512,"1":512,"2":512,"3":512,"4":512,"5":512,"6":512,"7":512}'
+      topologies: '[{"type": "HCCS", "groups": ["0,1,2,3", "4,5,6,7"]}],{"type": "SIO", "groups": ["0","1","2","3","4","5","6","7"]}]'
+    status:
+      allocatable:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "800"
+        volcano.sh/flexnpu-memory.128mi: "800"
+        pods: 110
+      capacity:
+        cpu: 96
+        memory: 512Gi
+        volcano.sh/flexnpu-core.percentage: "800"
+        volcano.sh/flexnpu-memory.128mi: "800"
+        pods: 110
