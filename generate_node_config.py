@@ -2,6 +2,9 @@
 """
 Build a Volcano/K8s NodeList YAML from pai_machine_spec.csv (non-CPU rows only).
 
+Optional positional N|all: how many nodes go into the single -o file — N = first N
+nodes after filters then stop; all (or omit) = every matching row in one file.
+
 CPU cores: allocatable.cpu / capacity.cpu = cap_cpu / cpu_divisor (default 1000 per
 spec; this trace often stores core counts as 64/96 — use --cpu-divisor 1 then).
 
@@ -126,6 +129,33 @@ def emit_node_yaml(
 """
 
 
+def nodelist_header() -> str:
+    return """# yaml-language-server: $schema=../../schemas/cluster/cluster-input.schema.json
+apiVersion: v1
+kind: NodeList
+spec:
+  kubernetesVersion: "1.31"
+  volcanoVersion: "1.12"
+nodes:
+"""
+
+
+def parse_nodes_spec(value: str) -> int | str:
+    """Return positive int (cap node count in one file) or 'all' (no cap)."""
+    s = value.strip().lower()
+    if s == "all":
+        return "all"
+    try:
+        n = int(s, 10)
+    except ValueError as e:
+        raise argparse.ArgumentTypeError(
+            f"expected a positive integer or 'all', got {value!r}"
+        ) from e
+    if n < 1:
+        raise argparse.ArgumentTypeError("node count must be >= 1")
+    return n
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent
     p = argparse.ArgumentParser(
@@ -168,6 +198,17 @@ def main() -> int:
         action="store_true",
         help="Omit rows where cap_gpu is 0 after filtering non-CPU",
     )
+    p.add_argument(
+        "nodes",
+        nargs="?",
+        default=None,
+        metavar="N|all",
+        type=parse_nodes_spec,
+        help=(
+            "Nodes in the single -o file: positive integer = first N then stop; "
+            "all = no limit. Omit defaults to all."
+        ),
+    )
     args = p.parse_args()
 
     fieldnames = args.header.read_text(encoding="utf-8").strip().split(",")
@@ -182,6 +223,10 @@ def main() -> int:
     warned_cpu = False
     blocks: list[str] = []
     node_index = 0
+    limit: int | None = None
+    if args.nodes is not None and isinstance(args.nodes, int):
+        limit = args.nodes
+
     for row in rows:
         cap_cpu_i = int(row["cap_cpu"])
         cap_mem_i = int(row["cap_mem"])
@@ -209,15 +254,15 @@ def main() -> int:
             ).rstrip("\n")
         )
         node_index += 1
+        if limit is not None and len(blocks) >= limit:
+            break
 
-    header = """# yaml-language-server: $schema=../../schemas/cluster/cluster-input.schema.json
-apiVersion: v1
-kind: NodeList
-spec:
-  kubernetesVersion: "1.31"
-  volcanoVersion: "1.12"
-nodes:
-"""
+    header = nodelist_header()
+    if limit is not None and len(blocks) < limit:
+        print(
+            f"Warning: requested {limit} nodes but only {len(blocks)} rows matched filters.",
+            file=sys.stderr,
+        )
     args.output.write_text(header + "\n".join(blocks) + "\n", encoding="utf-8")
     print(f"Wrote {len(blocks)} nodes to {args.output}")
     return 0

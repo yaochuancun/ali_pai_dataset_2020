@@ -1,0 +1,2986 @@
+# yaml-language-server: $schema=../../schemas/workload/workload-input.schema.json
+apiVersion: v1
+kind: JobList
+spec:
+  npuGranularityPercent: 25
+jobs:
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00007656d5a4cc25ec84675c
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '16'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '16'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0001453e541c1cdd5358f7ab
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 150
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 150
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 15.625Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+                  limits:
+                    cpu: '6'
+                    memory: 15.625Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00015001ef5ddfb0f184e1b3
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 2 }'
+    spec:
+      minAvailable: 16
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 16
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00021cf05a787c607ea8dc67
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-evaluator": 1, "c-worker": 1 }'
+    spec:
+      minAvailable: 31
+      schedulerName: volcano
+      tasks:
+        - name: evaluator
+          replicas: 1
+          spec:
+            containers:
+              - name: c-evaluator
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+        - name: worker
+          replicas: 30
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 000401d8cb8beffcb29e17fd
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 8 }'
+    spec:
+      minAvailable: 2
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 2
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '90'
+                    memory: 300Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+                  limits:
+                    cpu: '90'
+                    memory: 300Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0004066bf4f23fa011a0caee
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-evaluator": 1, "c-worker": 1 }'
+    spec:
+      minAvailable: 11
+      schedulerName: volcano
+      tasks:
+        - name: evaluator
+          replicas: 1
+          spec:
+            containers:
+              - name: c-evaluator
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 2Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 2Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 000408b0748e267f9a049a94
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '10'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '10'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0004680dfbc284e9ec2e0425
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '10'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '10'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00051457023fcc991ae580f2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00063b3b3ac4a5405f3529f2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 3
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 3
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 000728d2ea8f8632ba5c3caa
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 4
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 4
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0009153cf58a4e1d5a9adb5e
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 8
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 8
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0009e96034c501bb8ebfec4f
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 4
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 4
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 000a8ff8f2db32ab1f534028
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 20
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 20
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 000e702143f34780897e542e
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 16
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 16
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001041acc66b852303024ec5
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '12'
+                    memory: 15.625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '12'
+                    memory: 15.625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0010f0cd5f31db74d63d649d
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00135bcde3ee7a94e2fc7f29
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 50
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 50
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '4'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '4'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00161a9fb2bb669df448fa4a
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 4
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 4
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00173fae1c3fcb8050cca763
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 20
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 20
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0017b3aba22bbdd178657f2e
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-jupytertask": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: jupytertask
+          replicas: 1
+          spec:
+            containers:
+              - name: c-jupytertask
+                resources:
+                  requests:
+                    cpu: '2'
+                    memory: 3.92578125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '2'
+                    memory: 3.92578125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0017cb08c9ded06c686cc155
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 8
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 8
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0019ae663a0af49f02b0c750
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 60
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 60
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001bf529070b8bcf434c7e1f
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 8 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '90'
+                    memory: 300Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+                  limits:
+                    cpu: '90'
+                    memory: 300Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001c8a3e2a42f416e5c6b2e4
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001c95942f08745ba2205335
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 30
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 30
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001de169d604786af87c0c00
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001e0a4b54abefe96e86a1d0
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 80
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 80
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '1'
+                    memory: 9.765625Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+                  limits:
+                    cpu: '1'
+                    memory: 9.765625Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 001f32ebba45958306314cee
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-ps": 1, "c-worker": 1 }'
+    spec:
+      minAvailable: 2
+      schedulerName: volcano
+      tasks:
+        - name: ps
+          replicas: 1
+          spec:
+            containers:
+              - name: c-ps
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002055ea6dcf4aec1583aab4
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 61
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 61
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002092d8646b6ccefb32828d
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0021231b67f4ec23f091792a
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 48.828125Gi
+                    volcano.sh/flexnpu-core.percentage: "40"
+                    volcano.sh/flexnpu-memory.128mi: "40"
+                  limits:
+                    cpu: '6'
+                    memory: 48.828125Gi
+                    volcano.sh/flexnpu-core.percentage: "40"
+                    volcano.sh/flexnpu-memory.128mi: "40"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0021bec324df2b7cead8a6fa
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "5"
+                    volcano.sh/flexnpu-memory.128mi: "5"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "5"
+                    volcano.sh/flexnpu-memory.128mi: "5"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002282c1d6d35ebb8642bd61
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 8 }'
+    spec:
+      minAvailable: 2
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 2
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002302b0b487e9301453f96b
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 30
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 30
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002356b968d36cdc294e829d
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 100
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 100
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00243c752be938245b1511e4
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0025c1ed86c7729a238e9024
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0027932e1518e336b56c8234
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 60
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 60
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '5'
+                    memory: 24.4140625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '5'
+                    memory: 24.4140625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0028910a97f94d249fe144bc
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002b6036499d76e85b68b2cc
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 4.8828125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 4.8828125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002bfc8777b8aa2b965ec079
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002c28737ff3ab9c7403aa2a
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 25
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 25
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 24.4140625Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 24.4140625Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002c53045a8157902d5673da
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002d19d6c46a8ccd66299d35
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 2 }'
+    spec:
+      minAvailable: 16
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 16
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '20'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+                  limits:
+                    cpu: '20'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002dacdd09237c423a8b693e
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 100
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 100
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 002fca09f5f5c151fa62b041
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00321f4f8183b623412de6a3
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 12
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 12
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 4Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0032d5e0ecf57d42205d8575
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0035612740fa03041fbb030e
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 20
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 20
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '2'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '2'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0035d899dd5294cbe09d59d3
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-evaluator": 4, "c-worker": 1 }'
+    spec:
+      minAvailable: 11
+      schedulerName: volcano
+      tasks:
+        - name: evaluator
+          replicas: 1
+          spec:
+            containers:
+              - name: c-evaluator
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "400"
+                    volcano.sh/flexnpu-memory.128mi: "400"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "400"
+                    volcano.sh/flexnpu-memory.128mi: "400"
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0037d2b3d56c0efce5af1b6d
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00383cdda9babef453c9fd2f
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 003876109799628c6d35adc8
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 3
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 3
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0039d1d80f9ddb0beb8a1025
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '2'
+                    memory: 7.8125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '2'
+                    memory: 7.8125Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0039fed61a485d6412ce5010
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 003b52c5fb698b2adcb44c85
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 003c1d0260a712b5b9711541
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-ps": 1, "c-worker": 1 }'
+    spec:
+      minAvailable: 3
+      schedulerName: volcano
+      tasks:
+        - name: ps
+          replicas: 1
+          spec:
+            containers:
+              - name: c-ps
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+        - name: worker
+          replicas: 2
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 003c35506c9d31fb36f4fa25
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 50
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 50
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '4'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '4'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 003f3269be538ca0bfb49d9a
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 8 }'
+    spec:
+      minAvailable: 3
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 3
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '64'
+                    memory: 62.5Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+                  limits:
+                    cpu: '64'
+                    memory: 62.5Gi
+                    volcano.sh/flexnpu-core.percentage: "800"
+                    volcano.sh/flexnpu-memory.128mi: "800"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0042166c2909e7ab70e3f435
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 5
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 5
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00426f82a420f9f5544c378a
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '16'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '16'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0042a3d4b6ff03e41e595278
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 8
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 8
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 004408a85d3777dd8ed2a968
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 30.234375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 30.234375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0044838cfc7d1fae9f332815
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 9.765625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 9.765625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0044e1f35f56733626e8db59
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 37
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 37
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '8'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '8'
+                    memory: 78.125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0044e8ba24870f8323fe190f
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00486ac3fd99f4346d479fa8
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 4
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 4
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '16'
+                    memory: 9.765625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '16'
+                    memory: 9.765625Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 004a1b5557ca24672d83295c
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 16
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 16
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 004b1e1808cfc0877ee5de2f
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '5'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+                  limits:
+                    cpu: '5'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 004b7253087c02325f3ea06c
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '16'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '16'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 004dfc0a345ac2c248f39ff9
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 004ff4fa4a2d843e915bc25c
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00505159872cfb94dc1ccebd
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0051291761d24a8d55ff8487
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 4
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 4
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '10'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '10'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0051b2dad5bd634d501fab1b
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "20"
+                    volcano.sh/flexnpu-memory.128mi: "20"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00530ffb11f726d25991e6f1
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '1'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '1'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0054cb39aa0a6108fbd037fd
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 2 }'
+    spec:
+      minAvailable: 2
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 2
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0055a093b9965f3de025d5d2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0058252495c7c61f7cdf3b41
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 8
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 8
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005a097fefdd109a08e2d2c2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005a73446bd7f8df2d440062
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 9
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 9
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "10"
+                    volcano.sh/flexnpu-memory.128mi: "10"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005a96ea94dda228da43e0b2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 6
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 6
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '16'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '16'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005b40352d691f6e79fbecf3
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '5'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '5'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005b962d4f8fc68575cfba6f
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005e38ee3afee51964a86faf
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 20
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 20
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005f361a19c4538596e61aec
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005fa226ef6b86f2fba1444c
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 005ffd68a9f0ff2803c78810
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00621ea570b08b397afb34d2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 00624701fc0bf7f031bb2cce
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 10
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 10
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006273d6e18372cfc4a27a5d
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006816ffc6908a433492dcb6
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 4 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '12'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "400"
+                    volcano.sh/flexnpu-memory.128mi: "400"
+                  limits:
+                    cpu: '12'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "400"
+                    volcano.sh/flexnpu-memory.128mi: "400"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0069d387e0d8fedbe832b2ff
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '1'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '1'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 0069f6ffa323fee51ae470f2
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006b3496f25c5f8e78613db7
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-pytorchworker": 2 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: pytorchworker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-pytorchworker
+                resources:
+                  requests:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+                  limits:
+                    cpu: '18'
+                    memory: 58.59375Gi
+                    volcano.sh/flexnpu-core.percentage: "200"
+                    volcano.sh/flexnpu-memory.128mi: "200"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006c6ab0ab27db455ea640d8
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 50
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 50
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '4'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+                  limits:
+                    cpu: '4'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "50"
+                    volcano.sh/flexnpu-memory.128mi: "50"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006c7cb9410dc0816900389b
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-tensorflow": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: tensorflow
+          replicas: 1
+          spec:
+            containers:
+              - name: c-tensorflow
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+                  limits:
+                    cpu: '6'
+                    memory: 29.296875Gi
+                    volcano.sh/flexnpu-core.percentage: "100"
+                    volcano.sh/flexnpu-memory.128mi: "100"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006ca430d9a5186dbad86f5e
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 1
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 1
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '4'
+                    memory: 39.0625Gi
+                    volcano.sh/flexnpu-core.percentage: "80"
+                    volcano.sh/flexnpu-memory.128mi: "80"
+                  limits:
+                    cpu: '4'
+                    memory: 39.0625Gi
+                    volcano.sh/flexnpu-core.percentage: "80"
+                    volcano.sh/flexnpu-memory.128mi: "80"
+  - apiVersion: batch.volcano.sh/v1alpha1
+    kind: Job
+    metadata:
+      labels:
+        sub-time: '0'
+      name: 006d5432663d52862f65b9d5
+      namespace: default
+      annotations:
+        volcano.sh/flexnpu-num: '{ "c-worker": 1 }'
+    spec:
+      minAvailable: 100
+      schedulerName: volcano
+      tasks:
+        - name: worker
+          replicas: 100
+          spec:
+            containers:
+              - name: c-worker
+                resources:
+                  requests:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"
+                  limits:
+                    cpu: '6'
+                    memory: 19.53125Gi
+                    volcano.sh/flexnpu-core.percentage: "25"
+                    volcano.sh/flexnpu-memory.128mi: "25"

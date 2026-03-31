@@ -13,6 +13,8 @@ Performance:
   column indices + 8 MiB read buffer (already much faster than DictReader).
 - Use `--stdlib-only` to force the stdlib path. YAML emission of tens of thousands
   of jobs is usually the next bottleneck (disk I/O).
+- Use `--max-jobs N` (alias: `--jobs-per-file`) to cap how many jobs go into the
+  single output file (first N after sort); omit for all jobs.
 """
 
 from __future__ import annotations
@@ -333,6 +335,15 @@ def main() -> int:
         help="Log plan_* conflicts when merging duplicate (job_name, task_name) rows "
         f"(default off for speed; at most {_WARN_MISMATCH_LIMIT} messages)",
     )
+    p.add_argument(
+        "--max-jobs",
+        "--jobs-per-file",
+        type=int,
+        default=None,
+        metavar="N",
+        dest="max_jobs",
+        help="Include at most the first N jobs (after sort) in the single -o file",
+    )
     args = p.parse_args()
 
     if not args.job_csv.is_file():
@@ -340,6 +351,9 @@ def main() -> int:
         return 1
     if not args.task_csv.is_file():
         print(f"Missing task CSV: {args.task_csv}", file=sys.stderr)
+        return 1
+    if args.max_jobs is not None and args.max_jobs < 1:
+        print("--max-jobs must be >= 1", file=sys.stderr)
         return 1
 
     d = args.date or date.today().strftime("%Y%m%d")
@@ -385,6 +399,16 @@ def main() -> int:
 
         flex_ann = build_flexnpu_num_map(job_tasks)
         job_blocks.append(emit_job_yaml(jn, job_tasks, flex_ann).rstrip())
+
+    if args.max_jobs is not None:
+        total_avail = len(job_blocks)
+        job_blocks = job_blocks[: args.max_jobs]
+        if total_avail > len(job_blocks):
+            print(
+                f"Warning: --max-jobs={args.max_jobs}; {total_avail} jobs available, "
+                f"only {len(job_blocks)} written.",
+                file=sys.stderr,
+            )
 
     header = f"""# yaml-language-server: $schema=../../schemas/workload/workload-input.schema.json
 apiVersion: v1
